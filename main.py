@@ -5,12 +5,8 @@ import pygame_menu
 
 screen_width = 320
 screen_height = 520
-
 done = False
 White = (255, 255, 255)
-Grey = (179, 179, 179)
-Black = (17, 17, 17)
-Green = (30, 215, 96)
 
 
 pygame.init()
@@ -20,9 +16,6 @@ screen = pygame.display.set_mode((screen_width, screen_height))
 width = screen.get_width()
 height = screen.get_height()
 rollsound = pygame.mixer.Sound("roll.mp3")
-mouse = pygame.mouse.get_pos()
-rollvalue = 0
-screen.fill(Black)
 font = pygame.font.SysFont('Arial', 100, True, False)
 
 
@@ -96,7 +89,8 @@ def rolld100():
     pygame.time.wait(2000)
 
 
-menu = pygame_menu.Menu('Dungeon Dice', screen_width, screen_height, theme=pygame_menu.themes.THEME_DARK, columns=2, rows=4)
+menu = pygame_menu.Menu('Dungeon Dice', screen_width, screen_height,
+                        theme=pygame_menu.themes.THEME_DARK, columns=2, rows=4)
 
 
 menu.add.button('D4', rolld4)
