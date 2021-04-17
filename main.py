@@ -1,17 +1,16 @@
 import random
 import pygame
 import pygame_menu
-import sys
-import time
+
 
 screen_width = 320
 screen_height = 520
 
 done = False
-White = (255,255,255)
-Grey = (179,179,179)
-Black = (17,17,17)
-Green = (30,215,96)
+White = (255, 255, 255)
+Grey = (179, 179, 179)
+Black = (17, 17, 17)
+Green = (30, 215, 96)
 
 
 pygame.init()
@@ -24,13 +23,11 @@ rollsound = pygame.mixer.Sound("roll.mp3")
 mouse = pygame.mouse.get_pos()
 rollvalue = 0
 screen.fill(Black)
-font = pygame.font.SysFont('Arial', 100,True,False)
-rollvalue = str(0)
-startzero = font.render(rollvalue, True, White)
-pygame.display.update()
+font = pygame.font.SysFont('Arial', 100, True, False)
+
 
 def rolld20():
-    d20output = random.randint(1,20)
+    d20output = random.randint(1, 20)
     rollvalue = str(d20output)
     text = font.render(rollvalue, True, White)
     screen.blit(text, (width - 190, height - 450))
@@ -38,8 +35,9 @@ def rolld20():
     pygame.display.update()
     pygame.time.wait(2000)
 
+
 def rolld12():
-    d12output = random.randint(1,12)
+    d12output = random.randint(1, 12)
     rollvalue = str(d12output)
     text = font.render(rollvalue, True, White)
     screen.blit(text, (width - 190, height - 450))
@@ -47,8 +45,9 @@ def rolld12():
     pygame.display.update()
     pygame.time.wait(2000)
 
+
 def rolld10():
-    d10output = random.randint(1,10)
+    d10output = random.randint(1, 10)
     rollvalue = str(d10output)
     text = font.render(rollvalue, True, White)
     screen.blit(text, (width - 190, height - 450))
@@ -56,8 +55,9 @@ def rolld10():
     pygame.display.update()
     pygame.time.wait(2000)
 
+
 def rolld8():
-    d8output = random.randint(1,8)
+    d8output = random.randint(1, 8)
     rollvalue = str(d8output)
     text = font.render(rollvalue, True, White)
     screen.blit(text, (width - 190, height - 450))
@@ -65,8 +65,9 @@ def rolld8():
     pygame.display.update()
     pygame.time.wait(2000)
 
+
 def rolld6():
-    d6output = random.randint(1,6)
+    d6output = random.randint(1, 6)
     rollvalue = str(d6output)
     text = font.render(rollvalue, True, White)
     screen.blit(text, (width - 190, height - 450))
@@ -74,8 +75,9 @@ def rolld6():
     pygame.display.update()
     pygame.time.wait(2000)
 
+
 def rolld4():
-    d4output = random.randint(1,4)
+    d4output = random.randint(1, 4)
     rollvalue = str(d4output)
     text = font.render(rollvalue, True, White)
     screen.blit(text, (width - 190, height - 450))
@@ -83,8 +85,9 @@ def rolld4():
     pygame.display.update()
     pygame.time.wait(2000)
 
+
 def rolld100():
-    d100output = random.randint(1,100)
+    d100output = random.randint(1, 100)
     rollvalue = str(d100output)
     text = font.render(rollvalue, True, White)
     screen.blit(text, (width - 190, height - 450))
@@ -92,7 +95,9 @@ def rolld100():
     pygame.display.update()
     pygame.time.wait(2000)
 
+
 menu = pygame_menu.Menu('Dungeon Dice', screen_width, screen_height, theme=pygame_menu.themes.THEME_DARK, columns=2, rows=4)
+
 
 menu.add.button('D4', rolld4)
 menu.add.button('D6', rolld6)
